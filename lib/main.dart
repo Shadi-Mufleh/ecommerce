@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
+import 'package:carousel_nullsafety/carousel_nullsafety.dart';
 import 'package:ecommerce/componets/horizotal_listview.dart';
 import 'package:ecommerce/componets/products.dart';
 import 'package:ecommerce/pages/cart.dart';
 
-void main() {
+void main()
+
+ {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Homepage(),
@@ -20,20 +22,32 @@ class Homepage extends StatefulWidget {
 class _HomePageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    Widget imageCarousel = SizedBox(
+    Widget imageCarousel = const SizedBox(
       height: 200.0,
       child: Carousel(
         boxFit: BoxFit.cover,
-        images: const [
-          AssetImage('images/c1.jpg'),
-          AssetImage('images/m1.jpeg'),
-          AssetImage('images/w3.jpeg'),
-          AssetImage('images/w4.jpeg'),
-          AssetImage('images/m2.jpg'),
+        images: [
+          AssetImage('images/sabta-1.jpeg'),
+          AssetImage('images/sabta-2.jpeg'),
+          AssetImage('images/sabta-3.jpeg'),
+          AssetImage('images/sabta-4.jpeg'),
+          AssetImage('images/sabta-5.jpeg'),
+          AssetImage('images/sabta-6.jpeg'),
+          AssetImage('images/sabta-7.jpeg'),
+          AssetImage('images/sabta-8.jpeg'),
+          AssetImage('images/sabta-9.jpeg'),
+          AssetImage('images/sabta-10.jpeg'),
+          AssetImage('images/sabta-11.jpeg'),
+          AssetImage('images/sabta-12.jpeg'),
+          AssetImage('images/sabta-13.jpeg'),
+          AssetImage('images/sabta-14.jpeg'),
+          AssetImage('images/sabta-15.jpeg'),
+
+
         ],
         autoplay: true,
         animationCurve: Curves.fastOutSlowIn,
-        animationDuration: const Duration(microseconds: 1000),
+        animationDuration: Duration(microseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 3.0,
         dotBgColor: Colors.transparent,
@@ -44,7 +58,7 @@ class _HomePageState extends State<Homepage> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.red,
-        title: const Text('FashApp'),
+        title: const Text('SGMT'),
         actions: <Widget>[
           IconButton(
               icon: const Icon(
@@ -59,7 +73,7 @@ class _HomePageState extends State<Homepage> {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => new Cart()));
+                    MaterialPageRoute(builder: (context) => const Cart()));
               })
         ],
       ),
@@ -67,15 +81,14 @@ class _HomePageState extends State<Homepage> {
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: const Text('shadi mufleh'),
-              accountEmail: const Text('shadi.mufleh@yahoo.com'),
+              accountName: const Text(''),
+              accountEmail: const Text(''),
               currentAccountPicture: GestureDetector(
                 child: const CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
+
+                  backgroundImage: AssetImage( "images/sgmt-icon.jpeg"),
+
+
                 ),
               ),
               decoration: const BoxDecoration(color: Colors.red),
@@ -93,7 +106,7 @@ class _HomePageState extends State<Homepage> {
             InkWell(
               onTap: () {},
               child: const ListTile(
-                title: Text('My Account'),
+                title: Text('Profile'),
                 leading: Icon(
                   Icons.person,
                   color: Colors.red,
@@ -103,7 +116,7 @@ class _HomePageState extends State<Homepage> {
             InkWell(
               onTap: () {},
               child: const ListTile(
-                title: Text('My Orders'),
+                title: Text('Products'),
                 leading: Icon(
                   Icons.shopping_basket,
                   color: Colors.red,
@@ -113,10 +126,10 @@ class _HomePageState extends State<Homepage> {
             InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => new Cart()));
+                    MaterialPageRoute(builder: (context) => const Cart()));
               },
               child: const ListTile(
-                title: Text('Shopping cart'),
+                title: Text('Projects'),
                 leading: Icon(
                   Icons.shopping_cart,
                   color: Colors.red,
@@ -126,7 +139,7 @@ class _HomePageState extends State<Homepage> {
             InkWell(
               onTap: () {},
               child: const ListTile(
-                title: Text('favourites'),
+                title: Text('Projects'),
                 leading: Icon(
                   Icons.favorite,
                   color: Colors.red,
@@ -137,14 +150,14 @@ class _HomePageState extends State<Homepage> {
             InkWell(
               onTap: () {},
               child: const ListTile(
-                title: Text('settings'),
+                title: Text('Catalouge'),
                 leading: Icon(Icons.settings),
               ),
             ),
             InkWell(
               onTap: () {},
               child: const ListTile(
-                title: Text('About'),
+                title: Text('Contact us'),
                 leading: Icon(Icons.help),
               ),
             ),
@@ -155,18 +168,18 @@ class _HomePageState extends State<Homepage> {
         children: <Widget>[
           imageCarousel,
           Padding(
-            padding: EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(4.0),
             child: Container(
-                alignment: Alignment.centerLeft, child: new Text('catagories')),
+                alignment: Alignment.centerLeft, child: const Text('catagories')),
           ),
-          HorizontalList(),
+          const HorizontalList(),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
                 alignment: Alignment.centerLeft,
-                child: new Text('Recent products')),
+                child: const Text('Recent products')),
           ),
-          Flexible(child: Products()),
+          const Flexible(child: Products()),
         ],
       ),
     );

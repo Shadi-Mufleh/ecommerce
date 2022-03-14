@@ -29,18 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  carousel_pro: ^1.0.0
-  firebase_auth:
-  google_sign_in:
-  cloud_firestore:
-  firebase_storage:
-  fluttertoast:
-  shared_preferences:
+  carousel_nullsafety:
   image_picker:
-  cached_network_image:
   intl: ^0.15.7
-  firebase_database:
-  provider:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -125,6 +116,36 @@ flutter:
     - images/products/shoe1.jpg
     - images/products/skt1.jpeg
     - images/products/skt2.jpeg
+    - images/cats/marble.png
+    - images/cats/granite.jpg
+    - images/cats/Onyx.jpg
+    - images/cats/travertin.jpg
+    - images/cats/limestone.jpg
+    - images/cats/sandstone.jpg
+    - images/cats/slates.jpg
+    - images/cats/quartz.jpg
+    - images/products/onyx-agate.jpeg
+    - images/products/statuario.jpeg
+    - images/products/armani-gold.jpeg
+    - images/products/black-bambu.jpeg
+    - images/sabta-1.jpeg
+    - images/sabta-2.jpeg
+    - images/sabta-3.jpeg
+    - images/sabta-4.jpeg
+    - images/sabta-5.jpeg
+    - images/sabta-6.jpeg
+    - images/sabta-7.jpeg
+    - images/sabta-8.jpeg
+    - images/sabta-9.jpeg
+    - images/sabta-10.jpeg
+    - images/sabta-11.jpeg
+    - images/sabta-12.jpeg
+    - images/sabta-13.jpeg
+    - images/sabta-14.jpeg
+    - images/sabta-15.jpeg
+    - images/sgmt-icon.jpeg
+
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -4,15 +4,11 @@ import 'package:ecommerce/main.dart';
 
 class ProductsDetails extends StatefulWidget {
   final product_detail_name;
-  final product_detail_new_price;
-  final product_detail_old_price;
   final product_detail_picture;
 
   const ProductsDetails(
       {Key? key,
         this.product_detail_name,
-        this.product_detail_new_price,
-        this.product_detail_old_price,
         this.product_detail_picture})
       : super(key: key);
 
@@ -26,13 +22,13 @@ class _ProductsDetailsState extends State<ProductsDetails> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.1,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.red.shade900,
         title: InkWell(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Homepage()));
+                MaterialPageRoute(builder: (context) => const Homepage()));
           },
-          child: Text('ecommerce'),
+          child: const Text('SGMT'),
         ),
         actions: <Widget>[
           IconButton(
@@ -43,7 +39,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
               onPressed: () {}),
         ],
       ),
-      body: new ListView(
+      body: ListView(
         children: <Widget>[
           Container(
             height: 300.0,
@@ -52,157 +48,27 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                 color: Colors.white,
                 child: Image.asset(widget.product_detail_picture),
               ),
-              footer: new Container(
+              footer: Container(
                 color: Colors.white70,
                 child: ListTile(
-                  leading: new Text(
+                  leading: Text(
                     widget.product_detail_name,
                     style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                   ),
-                  title: new Row(
-                    children: <Widget>[
-                      Expanded(
-                          child: new Text(
-                            "\$${widget.product_detail_old_price}",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                decoration: TextDecoration.lineThrough,
-                                decorationThickness: 2.85),
-                          )),
-                      Expanded(
-                          child: new Text(
-                            "\$${widget.product_detail_new_price}",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, color: Colors.red),
-                          )),
-                    ],
+                  title: Row(
                   ),
                 ),
               ),
             ),
           ),
           Row(
-            children: <Widget>[
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return new AlertDialog(
-                            title: new Text("Size"),
-                            content: new Text("Choose the size"),
-                            actions: <Widget>[
-                              new MaterialButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop(context);
-                                },
-                                child: new Text("close"),
-                              )
-                            ],
-                          );
-                        });
-                  },
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(child: new Text("Size")),
-                      Expanded(child: new Icon(Icons.arrow_drop_down)),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return new AlertDialog(
-                            title: new Text("colors"),
-                            content: new Text("Choose the color"),
-                            actions: <Widget>[
-                              new MaterialButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop(context);
-                                },
-                                child: new Text("close"),
-                              )
-                            ],
-                          );
-                        });
-                  },
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(child: new Text("color")),
-                      Expanded(child: new Icon(Icons.arrow_drop_down)),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return new AlertDialog(
-                            title: new Text("quantitiy"),
-                            content: new Text("Choose the quantity"),
-                            actions: <Widget>[
-                              new MaterialButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop(context);
-                                },
-                                child: new Text("close"),
-                              )
-                            ],
-                          );
-                        });
-                  },
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(child: new Text("quantity")),
-                      Expanded(child: new Icon(Icons.arrow_drop_down)),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: MaterialButton(
-                    onPressed: () {},
-                    color: Colors.red,
-                    textColor: Colors.white,
-                    elevation: 0.2,
-                    child: new Text("Buy now")),
-              ),
-              new IconButton(
-                  icon: Icon(Icons.add_shopping_cart),
-                  color: Colors.red,
-                  onPressed: () {}),
-              new IconButton(
-                  icon: Icon(Icons.favorite_border),
-                  color: Colors.red,
-                  onPressed: () {}),
-            ],
-          ),
-          Divider(),
-          new ListTile(
-            title: new Text("Product details"),
-            subtitle: new Text(
+          const Divider(),
+          ListTile(
+            title: const Text("Product details"),
+            subtitle: const Text(
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                     " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
                     " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -212,60 +78,46 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                     " containing Lorem Ipsum passages, and more recently with desktop "
                     "publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
           ),
-          Divider(),
-          new Row(
+          const Divider(),
+          Row(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-                child: new Text(
+              const Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
                   "Product name",
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(5.0),
-                child: new Text(widget.product_detail_name),
+                padding: const EdgeInsets.all(5.0),
+                child: Text(widget.product_detail_name),
               ),
             ],
           ),
-          new Row(
+          Row(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-                child: new Text(
-                  "Product brand",
+              const Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product origin",
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: new Text("brandx"),
+              const Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text("brandx"),
               ),
             ],
           ),
-          new Row(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-                child: new Text(
-                  "Product condition",
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: new Text("new"),
-              ),
-            ],
-          ),
-          Divider(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: new Text("Similar products"),
+
+          const Divider(),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Products Pictures"),
           ),
           Container(
             height: 340.0,
-            child: Similar_products(),
+            child: const Similar_products(),
           )
         ],
       ),
@@ -282,72 +134,33 @@ class Similar_products extends StatefulWidget {
 
 class _Similar_productsState extends State<Similar_products> {
   var product_list = [
+
+
     {
-      "name": "Blazer",
-      "picture": "images/products/blazer1.jpeg",
+      "name": "Onyx-Agate",
+      "picture": "images/products/onyx-agate.jpeg",
       "old_price": 120,
       "price": 85,
     },
     {
-      "name": "Blazer",
-      "picture": "images/products/blazer2.jpeg",
+      "name": "Statuario",
+      "picture": "images/products/statuario.jpeg",
       "old_price": 120,
       "price": 85,
     },
     {
-      "name": "dress",
-      "picture": "images/products/dress1.jpeg",
+      "name": "Armani-gold",
+      "picture": "images/products/armani-gold.jpeg",
       "old_price": 120,
       "price": 85,
     },
     {
-      "name": "dress2",
-      "picture": "images/products/dress2.jpeg",
+      "name": "Black-bambu",
+      "picture": "images/products/black-bambu.jpeg",
       "old_price": 120,
       "price": 85,
     },
-    {
-      "name": "hills",
-      "picture": "images/products/hills1.jpeg",
-      "old_price": 120,
-      "price": 85,
-    },
-    {
-      "name": "hills",
-      "picture": "images/products/hills2.jpeg",
-      "old_price": 120,
-      "price": 85,
-    },
-    {
-      "name": "pants",
-      "picture": "images/products/pants1.jpg",
-      "old_price": 120,
-      "price": 85,
-    },
-    {
-      "name": "pants",
-      "picture": "images/products/pants2.jpeg",
-      "old_price": 120,
-      "price": 85,
-    },
-    {
-      "name": "shoe",
-      "picture": "images/products/shoe1.jpg",
-      "old_price": 120,
-      "price": 85,
-    },
-    {
-      "name": "skirt",
-      "picture": "images/products/skt1.jpeg",
-      "old_price": 120,
-      "price": 85,
-    },
-    {
-      "name": "skirt",
-      "picture": "images/products/skt2.jpeg",
-      "old_price": 120,
-      "price": 85,
-    }
+
   ];
 
   @override
@@ -360,9 +173,7 @@ class _Similar_productsState extends State<Similar_products> {
           return Similar_single_prod(
             prod_name: product_list[index]['name'],
             prod_picture: product_list[index]['picture'],
-            prod_old_price: product_list[index]['old_price'],
-            prod_new_price: product_list[index]['price'],
-          );
+             );
         });
   }
 }
@@ -372,13 +183,9 @@ class Similar_single_prod extends StatelessWidget {
     Key? key,
     this.prod_name,
     this.prod_picture,
-    this.prod_old_price,
-    this.prod_new_price,
   }) : super(key: key);
   final prod_name;
   final prod_picture;
-  final prod_old_price;
-  final prod_new_price;
 
   @override
   Widget build(BuildContext context) {
@@ -390,27 +197,21 @@ class Similar_single_prod extends StatelessWidget {
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => ProductsDetails(
                   product_detail_name: prod_name,
-                  product_detail_new_price: prod_new_price,
-                  product_detail_old_price: prod_old_price,
-                  product_detail_picture: prod_picture,
+                   product_detail_picture: prod_picture,
                 ))),
             child: GridTile(
                 footer: Container(
                     color: Colors.white70,
-                    child: new Row(
+                    child: Row(
                       children: <Widget>[
                         Expanded(
-                          child: new Text(
+                          child: Text(
                             prod_name,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16.0),
                           ),
                         ),
-                        new Text(
-                          "\$${prod_new_price}",
-                          style: TextStyle(
-                              color: Colors.red, fontWeight: FontWeight.bold),
-                        )
+
                       ],
                     )),
                 child: Image.asset(

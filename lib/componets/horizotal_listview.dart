@@ -8,48 +8,59 @@ class HorizontalList extends StatelessWidget {
     return SizedBox(
       height: 100.0,
       child: ListView(
+
         scrollDirection: Axis.horizontal,
         children: const <Widget>[
           Category(
-            image_location: 'images/cats/accessories.png',
-            image_caption:'accessories',
+            
+            image_location: 'images/cats/granite.jpg',
+            image_caption:'Granite',
           ),
 
           Category(
-            image_location: 'images/cats/dress.png',
-            image_caption:'dress',
-
-          ),
-
-          Category(
-            image_location: 'images/cats/formal.png',
-            image_caption:'formal',
+            image_location: 'images/cats/marble.png',
+            image_caption:'Marble',
 
           ),
 
           Category(
-            image_location: 'images/cats/informal.png',
-            image_caption:'informal',
+            image_location: 'images/cats/Onyx.jpg',
+            image_caption:'Onyx',
 
           ),
 
           Category(
-            image_location: 'images/cats/jeans.png',
-            image_caption:'pants',
+            image_location: 'images/cats/travertin.jpg',
+            image_caption:'Travertine',
 
           ),
 
           Category(
-            image_location: 'images/cats/shoe.png',
-            image_caption:'shoe',
+            image_location: 'images/cats/limestone.jpg',
+            image_caption:'Limestone',
 
           ),
 
           Category(
-            image_location: 'images/cats/tshirt.png',
-            image_caption:'shirt',
+            image_location: 'images/cats/sandstone.jpg',
+            image_caption:'Sandstone',
 
           ),
+
+          Category(
+            image_location: 'images/cats/slates.jpg',
+            image_caption:'Slates',
+
+          ),
+
+
+          Category(
+            image_location: 'images/cats/quartz.jpg',
+            image_caption:'Quartz',
+
+          ),
+
+
         ],
       ),
     );
